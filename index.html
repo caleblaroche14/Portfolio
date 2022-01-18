@@ -3,6 +3,7 @@
 <html>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content=" user-scalable=no">
+  
   <title>Platformer</title>
 
   <body>   
@@ -17,30 +18,40 @@
 
     <div id= "bottom" class="platform" style='z-index: 100;'><p>0</p></div>
 
-
-
-    <div id= "one" class="platform navbox"><p>https://solarsystem7447.netlify.app</p>
+    <div id= "one" class="platform navbox clickme" onclick="goToLink('https://solarsystem7447.netlify.app')"><p>https://solarsystem7447.netlify.app</p>
       <div class="navtext">PROJECTS</div>
     </div>
 
-    <div id= "two" class="platform navbox"><p>about.html</p>
+    <div id= "two" class="platform navbox clickme"><p>about.html</p>
       <div class="navtext">ABOUT ME</div>
     </div>
 
-    <div id= "three" class="platform navbox"><p>contact.html</p>
+    <div id= "three" class="platform navbox clickme" ><p>contact.html</p>
       <div class="navtext">CONTACT</div>
     </div>
-    <!-- 
+    
     <div class="cloud">
       <div class="cloudpeice" style='position: absolute; left: 0px;'></div>
       <div class="cloudpeice" style='position: absolute; left: 200px;'></div>
       <div class="cloudpeice" style='position: absolute; left: 400px;'></div>
     </div>
-       -->
+       
 
     <div id="fadeout"></div>
 
-    <div id="character"></div>
+    <div id="character">
+
+      <div id="cbody" class="cbodyF"></div>
+      <div id="crleg" class="crlegF"></div>
+      <div id="clleg" class="cllegF"></div>
+      <div id="crarm" class="crarmF"></div>
+      <div id="clarm" class="clarmF"></div>
+
+      <div id="chead"class="cheadF">
+        <div id="cleye" class="cleyeF"></div>
+        <div id="creye" class="creyeF"></div>
+      </div>
+    </div>
     <script src="script.js"></script>
     <script src="ui.js"></script>
   </body>

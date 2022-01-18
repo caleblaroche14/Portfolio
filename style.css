@@ -43,14 +43,8 @@ body{
 .platform p{
   position: absolute;
   opacity: 0;
-}
-
-#character{
-  position: absolute;
-  height: 100px;
-  width: 50px;
-  background-color: red;
-  z-index: 1000;
+  pointer-events: none;
+  user-select: none;
 }
 
 .platform{
@@ -63,6 +57,16 @@ body{
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.clickme:hover{
+  transition: .4s;
+  box-shadow: 0px 0px 10px 10px white ;
+}
+
+.clickme{
+  transition: .4s;
 }
 
 #controlBox{
@@ -104,6 +108,13 @@ body{
 .controls:active{
   transition: 0s;
   background-color: aquamarine;
+  cursor:crosshair
+}
+
+.controls:hover{
+  cursor: pointer;
+  transition: 0s;
+  background-color: rgb(255, 127, 255);
 }
 
 #jump{
@@ -169,7 +180,8 @@ body{
   top:-300px;
   left: -300px;
   z-index: 0;
-
+  pointer-events: none;
+  opacity: .2;
   animation: moveCloud 40s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
@@ -189,3 +201,183 @@ body{
   to{left: -300px;}
   from{left: 100vw;}
 }
+
+/* CHARACTER */
+
+#character{
+  position: absolute;
+  height: 100px;
+  width: 50px;
+  background-color: rgba(255, 0, 0, 0);
+  z-index: 1000;
+}
+
+#cbody{
+  position:absolute;
+  height:45px;
+  width: 30px;
+  background-color: #9c0087;
+  top:35px;
+  left: 10px;
+}
+#chead{
+
+}
+.cleyeF{
+  position:absolute;
+  height:8px;
+  width: 8px;
+  background-color: #0096bb;
+  top:10px;
+  left: 7px;
+}
+.creyeF{
+  position:absolute;
+  height:8px;
+  width: 8px;
+  background-color: #0096bb;
+  top:10px;
+  left: 20px;
+}
+
+.crlegF{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:75px;
+  left: 10px;
+}
+.cllegF{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:75px;
+  left: 32px;
+}
+
+.clarmF{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:37px;
+  left: 40px;
+}
+.crarmF{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:37px;
+  left: 3px;
+}
+
+/* RIGHT */
+.cleyeF{
+  position:absolute;
+  height:8px;
+  width: 8px;
+  background-color: #0096bb;
+  top:10px;
+  left: 7px;
+}
+.creyeF{
+  position:absolute;
+  height:8px;
+  width: 8px;
+  background-color: #0096bb;
+  top:10px;
+  left: 20px;
+}
+
+.crlegR{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:75px;
+  left: 20px;
+}
+.cllegR{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:75px;
+  left: 20px;
+}
+
+.clarmR{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:37px;
+  left: 20px;
+}
+.crarmR{
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:37px;
+  left: 20px;
+}
+
+.cleyeR{
+  position:absolute;
+  height:8px;
+  width: 8px;
+  background-color: #0096bb00;
+  top:10px;
+  left: 7px;
+}
+
+.creyeL{
+  position:absolute;
+  height:8px;
+  width: 8px;
+  background-color: #0096bb00;
+  top:10px;
+  left: 7px;
+}
+
+/* down */
+.clarmD{
+  transition: 2s;
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:75px;
+  left: 40px;
+}
+.crarmD{
+  transition: 2s;
+  position:absolute;
+  height: 25px;
+  width: 8px;
+  background-color: #0096bb;
+  top:75px;
+  left: 3px;
+}
+
+.cheadD{
+  transition: 2s;
+  position:absolute;
+  height:35px;
+  background-color: #ff00dd;
+  width: 35px;
+  top:35px;
+  left: 7px;
+}
+.cheadF{
+  position:absolute;
+  height:35px;
+  width: 35px;
+  background-color: #ff00dd;
+  top:0px;
+  left: 7px;
+  }
