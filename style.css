@@ -1,0 +1,191 @@
+*{
+  margin: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+#fadeout{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 120vh;
+  width: 120vw;
+  opacity: 0;
+  pointer-events: none;
+  background: #D86749;
+  background: -webkit-linear-gradient(to bottom, #ff00dd, #000000);
+  background: -moz-linear-gradient(to bottom, #ff00dd, #000000);
+  background: linear-gradient(to bottom, #ff00dd, #000000);
+}
+
+#sky{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 105vh;
+  width: 105vw;
+  opacity: 1;
+  pointer-events: none;
+  background: #D86749;
+  background: -webkit-linear-gradient(to bottom, #ff00dd, #ffe600);
+  background: -moz-linear-gradient(to bottom, #ff00dd, #ffe600);
+  background: linear-gradient(to bottom, #ff00dd, #ffe600);
+  z-index: 0;
+}
+
+body{
+  overflow: hidden;
+}
+
+.platform p{
+  position: absolute;
+  opacity: 0;
+}
+
+#character{
+  position: absolute;
+  height: 100px;
+  width: 50px;
+  background-color: red;
+  z-index: 1000;
+}
+
+.platform{
+  position: absolute;
+  background: #22662A;
+  background: -webkit-linear-gradient(to bottom, #3d009e, #35008b);
+  background: -moz-linear-gradient(to bottom, #3d009e, #35008b);
+  background: linear-gradient(to bottom, #3d009e, #1f0050);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+#controlBox{
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 500px;
+}
+
+.controlrow{
+  display: relative;
+  display: flex;
+  width: 500px;
+  height: 300px;
+}
+
+.controls{
+  transition: .4s;
+  position: relative;
+  width: 100px;
+  height: 75px;
+  margin: 10px;
+  background-color:  rgb(77, 77, 77);
+  user-select: none;
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.controls:active{
+  transition: 0s;
+  background-color: aquamarine;
+}
+
+#jump{
+  width: 300px;
+}
+#click{
+  width: 200px;
+}
+#right{
+  width: 150px;
+}
+#left{
+  width: 150px;
+}
+
+/* NAV */
+.platform .navbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.navtext{
+  position: relative;
+  color: white;
+  font-size: 20px;
+}
+
+/* PLATFORM PLACING */
+
+#bottom{
+  position: absolute;
+  height: 20px;
+  width: 100vw;;
+}
+
+#one{
+  height: 150px;
+  width: 150px;
+}
+
+#two{
+  height: 150px;
+  width: 150px;
+}
+
+#three{
+  height: 150px;
+  width: 150px;
+}
+
+#four{
+  height: 50px;
+  width: 100px;
+  top: 100px;
+  left: 500px;
+}
+
+/* SCENE */
+.cloud{
+  position: absolute;
+  top:-300px;
+  left: -300px;
+  z-index: 0;
+
+  animation: moveCloud 40s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.cloudpeice{
+  height: 400px;
+  width: 400px;
+  background: #e4e4e4;
+  background: -webkit-linear-gradient(to bottom, #3d009e, #35008b);
+  background: -moz-linear-gradient(to bottom, #3d009e, #35008b);
+  background: linear-gradient(to bottom, #c0c0c0, #d8d8d8);
+  border-radius: 100%;
+}
+
+@keyframes moveCloud{
+  to{left: -300px;}
+  from{left: 100vw;}
+}
