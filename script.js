@@ -1,6 +1,6 @@
 // TODO: 
-// click on links
-// fix left side collisions
+// character walking animations
+// 
 //
 //
 
@@ -144,9 +144,13 @@ var right = document.getElementById('right');
 function goRight(){
     console.log('right');
     c.xvel=c.speed;
+
+    moveAnimation('r',1);
 }
 function stopRight(){
     c.xvel=0; 
+
+    moveAnimation('r',0);
 }
 right.addEventListener('mousedown', ()=>{
     goRight();
@@ -165,9 +169,14 @@ var left = document.getElementById('left');
 function goLeft(){
     console.log('right');
     c.xvel= -c.speed;
+
+    moveAnimation('l',1);
 }
 function stopLeft(){
     c.xvel=0; 
+
+    moveAnimation('l',0);
+    
 }
 left.addEventListener('mousedown', ()=>{
     goLeft();
@@ -187,7 +196,10 @@ function selectObj(){
         console.log(c.nearestObj);
         c.nearestObj.style.backgroundColor = 'red';
         children = c.nearestObj.childNodes;
+        leaveAnimation();
+        setTimeout(backupAnimation,2000);
         if (children[0].innerText.length > 5){
+
             setInterval(leavePage,10);
             let leave = setTimeout(()=>{
                 goToLink(children[0].innerText);
@@ -204,4 +216,103 @@ function goToLink(link){
 function leavePage(){
     fadeCount +=.01;
     fadeout.style.opacity = fadeCount;
+}
+
+var cleye = document.getElementById('cleye');
+var creye = document.getElementById('creye');
+var cbody = document.getElementById('cbody');
+var crleg = document.getElementById('crleg');
+var clleg = document.getElementById('clleg');
+var crarm = document.getElementById('crarm');
+var clarm = document.getElementById('clarm');
+var chead = document.getElementById('chead');
+//0: text
+//1: div#chead
+//2: text
+//3: div#cbody.cbodyF
+//4: text
+//5: div#crleg.crlegF
+//6: text
+//7: div#clleg.cllegF
+//8: text
+//9: div#crarm.crarmF
+//10: text
+//11: div#clarm.clarmF
+
+function moveAnimation(dir,type){
+    if (type == 1){
+        if (dir=='r'){
+            cleye.classList.add('cleyeR');
+            cleye.classList.remove('cleyeF');
+
+            crleg.classList.add('crlegR');
+            crleg.classList.remove('crlegF');
+
+            clleg.classList.add('cllegR');
+            clleg.classList.remove('cllegF');
+
+            crarm.classList.add('crarmR');
+            crarm.classList.remove('crarmF');
+
+            clarm.classList.add('clarmR');
+            clarm.classList.remove('clarmF');
+        }else{
+            creye.classList.add('creyeL');
+            creye.classList.remove('creyeF');
+
+            crleg.classList.add('crlegR');
+            crleg.classList.remove('crlegF');
+
+            clleg.classList.add('cllegR');
+            clleg.classList.remove('cllegF');
+
+            crarm.classList.add('crarmR');
+            crarm.classList.remove('crarmF');
+
+            clarm.classList.add('clarmR');
+            clarm.classList.remove('clarmF');
+        }
+    }else{
+        creye.classList.remove('creyeL');   
+        creye.classList.add('creyeF');
+
+        cleye.classList.remove('cleyeR');   
+        cleye.classList.add('cleyeF');
+
+        crleg.classList.remove('crlegR');
+        crleg.classList.add('crlegF');
+
+        clleg.classList.remove('cllegR');
+        clleg.classList.add('cllegF');
+
+        crarm.classList.remove('crarmR');
+        crarm.classList.add('crarmF');
+
+        clarm.classList.remove('clarmR');
+        clarm.classList.add('clarmF');
+    }
+}
+
+function leaveAnimation(){
+    console.log('leave');
+    crarm.classList.remove('crarmF');
+    crarm.classList.add('crarmD');
+
+    clarm.classList.remove('clarmF');
+    clarm.classList.add('clarmD');
+
+    chead.classList.remove('cheadF');
+    chead.classList.add('cheadD');
+}
+
+function backupAnimation(){
+    console.log('leave');
+    crarm.classList.add('crarmF');
+    crarm.classList.remove('crarmD');
+
+    clarm.classList.add('clarmF');
+    clarm.classList.remove('clarmD');
+
+    chead.classList.add('cheadF');
+    chead.classList.remove('cheadD');
 }
